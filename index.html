@@ -3,415 +3,334 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Anix Code Converter</title>
+  <title>Codex Converter</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
-
-  <!-- Highlight.js — atom-one-dark for dark, github for light -->
-  <link id="hlThemeDark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css" />
+  <link id="hlThemeDark"  rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css" />
   <link id="hlThemeLight" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css" disabled />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
   <link rel="stylesheet" href="styles.css"
 </head>
 <body>
-  <div class="ambient"></div>
-  <div class="progress-bar" id="progressBar"></div>
+<div class="ambient"></div>
+<div class="progress-bar" id="progressBar"></div>
 
-  <!-- NAV -->
-  <nav class="nav">
-    <div class="nav-inner">
-      <a class="logo" href="#">
-        <svg class="logo-icon" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect width="32" height="32" rx="8" fill="url(#logoGrad)"/>
-          <path d="M9 11l-4 5 4 5M23 11l4 5-4 5M18 7l-4 18" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-          <defs><linearGradient id="logoGrad" x1="0" y1="0" x2="32" y2="32"><stop stop-color="#8b5cf6"/><stop offset="1" stop-color="#ec4899"/></linearGradient></defs>
-        </svg>
-        <span class="logo-text">ANI<span class="logo-sep">X_</span>Code Converter</span>
-      </a>
-      <div class="nav-links">
-        <a href="#converter" class="nav-link active">Converter</a>
-        <a href="#features" class="nav-link">Features</a>
-        <a href="#history" class="nav-link">History</a>
-      </div>
-      <div class="nav-actions">
-        <button class="btn-icon" id="themeToggle" title="Toggle theme">
-          <svg id="themeIconSun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2m-7.07-14.07 1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
-          <svg id="themeIconMoon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
-        </button>
-        <button class="btn-icon" id="settingsBtn" title="Settings">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg>
-        </button>
-        <a href="#converter"><button class="btn-primary">Get Started</button></a>
-        <button class="nav-hamburger btn-icon" id="hamburger" aria-label="Toggle menu">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
-        </button>
-      </div>
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="logo" href="#">
+      <svg class="logo-icon" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="32" height="32" rx="8" fill="url(#lg)"/>
+        <path d="M9 11l-4 5 4 5M23 11l4 5-4 5M18 7l-4 18" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+        <defs><linearGradient id="lg" x1="0" y1="0" x2="32" y2="32"><stop stop-color="#8b5cf6"/><stop offset="1" stop-color="#ec4899"/></linearGradient></defs>
+      </svg>
+      <span class="logo-text">Code<span style="-webkit-text-fill-color:var(--accent-a);color:var(--accent-a)">x</span> Conveter</span>
+    </a>
+    <div class="nav-links">
+      <a href="#converter" class="nav-link active">Converter</a>
+      <a href="#features"  class="nav-link">Features</a>
+      <a href="#support"   class="nav-link">Supported Pairs</a>
+      <a href="#history"   class="nav-link">History</a>
     </div>
-  </nav>
-
-  <div class="mobile-menu" id="mobileMenu">
-    <a class="mobile-link" href="#converter" onclick="closeMobileMenu()">Converter</a>
-    <a class="mobile-link" href="#features" onclick="closeMobileMenu()">Features</a>
-    <a class="mobile-link" href="#history" onclick="closeMobileMenu()">History</a>
-    <button class="btn-primary" style="height:44px;border-radius:8px;font-size:0.9rem;" onclick="closeMobileMenu()">Get Started</button>
-  </div>
-
-  <!-- HERO -->
-  <section class="hero" id="home">
-    <div class="hero-badge"><span class="hero-badge-dot"></span>Claude AI-Powered  By</div>
-    <h1 class="hero-title">
-      Convert Your Code<br>
-      <span class="grad">Between Any Language</span>
-    </h1>
-    <p class="hero-sub">Paste your code, pick your target language, and get an accurate conversion in seconds — powered by Claude AI.</p>
-    <div class="hero-chips">
-      <span class="chip"><span class="chip-dot" style="background:#3572A5"></span>Python</span>
-      <span class="chip"><span class="chip-dot" style="background:#f1e05a"></span>JavaScript</span>
-      <span class="chip"><span class="chip-dot" style="background:#b07219"></span>Java</span>
-      <span class="chip"><span class="chip-dot" style="background:#A97BFF"></span>Kotlin</span>
-      <span class="chip"><span class="chip-dot" style="background:#00ADD8"></span>Go</span>
-      <span class="chip"><span class="chip-dot" style="background:#DEA584"></span>Rust</span>
-      <span class="chip"><span class="chip-dot" style="background:#3178c6"></span>TypeScript</span>
-      <span class="chip"><span class="chip-dot" style="background:#89e051"></span>Bash</span>
-      <span class="chip"><span class="chip-dot" style="background:#e34c26"></span>HTML</span>
-      <span class="chip"><span class="chip-dot" style="background:#4F5D95"></span>PHP</span>
-      <span class="chip"><span class="chip-dot" style="background:#178600"></span>C#</span>
-      <span class="chip"><span class="chip-dot" style="background:#F34B7D"></span>C++</span>
-    </div>
-  </section>
-
-  <!-- STATS -->
-  <div class="stats-bar">
-    <div class="stats-grid">
-      <div class="stat-item"><div class="stat-value" id="statConversions">0</div><div class="stat-label">Conversions Made</div></div>
-      <div class="stat-item"><div class="stat-value">25+</div><div class="stat-label">Languages Supported</div></div>
-      <div class="stat-item"><div class="stat-value">&lt; 3s</div><div class="stat-label">Avg. Response Time</div></div>
-      <div class="stat-item"><div class="stat-value">99%</div><div class="stat-label">Accuracy Rate</div></div>
+    <div class="nav-actions">
+      <button class="btn-icon" id="themeToggle" title="Toggle theme">
+        <svg id="themeIconSun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2m-7.07-14.07 1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        <svg id="themeIconMoon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+      </button>
+      <button class="btn-icon" id="settingsBtn" title="Settings">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg>
+      </button>
+      <a href="#converter"><button class="btn-primary">Get Started</button></a>
     </div>
   </div>
+</nav>
 
-  <!-- CONVERTER -->
-  <section class="converter-section" id="converter">
-    <div class="converter-header">
-      <span class="converter-title">// code converter</span>
-      <div class="converter-meta">
-        <span class="status-indicator"><span class="status-dot"></span>Claude AI Ready</span>
-      </div>
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-badge"><span class="hero-badge-dot"></span>Rule-Based · Online · No API Needed</div>
+  <h1 class="hero-title">Convert Your Code<br><span class="grad">Between Any Language</span></h1>
+  <p class="hero-sub">Paste your code, pick your target language — instant rule-based conversion with zero AI dependency. Works fully offline.</p>
+  <div class="hero-chips">
+    <span class="chip"><span class="chip-dot" style="background:#3572A5"></span>Python</span>
+    <span class="chip"><span class="chip-dot" style="background:#f1e05a"></span>JavaScript</span>
+    <span class="chip"><span class="chip-dot" style="background:#b07219"></span>Java</span>
+    <span class="chip"><span class="chip-dot" style="background:#A97BFF"></span>Kotlin</span>
+    <span class="chip"><span class="chip-dot" style="background:#00ADD8"></span>Go</span>
+    <span class="chip"><span class="chip-dot" style="background:#DEA584"></span>Rust</span>
+    <span class="chip"><span class="chip-dot" style="background:#3178c6"></span>TypeScript</span>
+    <span class="chip"><span class="chip-dot" style="background:#89e051"></span>Bash</span>
+    <span class="chip"><span class="chip-dot" style="background:#178600"></span>C#</span>
+    <span class="chip"><span class="chip-dot" style="background:#F34B7D"></span>C++</span>
+    <span class="chip"><span class="chip-dot" style="background:#4F5D95"></span>PHP</span>
+    <span class="chip"><span class="chip-dot" style="background:#701516"></span>Ruby</span>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-bar">
+  <div class="stats-grid">
+    <div class="stat-item"><div class="stat-value" id="statConversions">0</div><div class="stat-label">Conversions Made</div></div>
+    <div class="stat-item"><div class="stat-value">10+</div><div class="stat-label">Languages Supported</div></div>
+    <div class="stat-item"><div class="stat-value">&lt; 10ms</div><div class="stat-label">Instant Response</div></div>
+    <div class="stat-item"><div class="stat-value">100%</div><div class="stat-label">Offline Capable</div></div>
+  </div>
+</div>
+
+<!-- CONVERTER -->
+<section class="converter-section" id="converter">
+  <div class="converter-header">
+    <span class="converter-title">// code converter</span>
+    <div class="converter-meta">
+      <span class="rule-badge">⚙ Rule-Based Engine</span>
+      <span class="status-indicator"><span class="status-dot"></span>Ready</span>
     </div>
-
-    <div class="controls-bar">
-      <div class="lang-selector-wrap">
-        <span class="lang-label">From</span>
-        <select class="lang-select" id="sourceLang">
-          <option value="python">Python</option>
-          <option value="javascript">JavaScript</option>
-          <option value="typescript">TypeScript</option>
-          <option value="java">Java</option>
-          <option value="c">C</option>
-          <option value="cpp">C++</option>
-          <option value="csharp">C#</option>
-          <option value="go">Go</option>
-          <option value="rust">Rust</option>
-          <option value="kotlin">Kotlin</option>
-          <option value="swift">Swift</option>
-          <option value="php">PHP</option>
-          <option value="ruby">Ruby</option>
-          <option value="scala">Scala</option>
-          <option value="r">R</option>
-          <option value="matlab">MATLAB</option>
-          <option value="bash">Bash</option>
-          <option value="powershell">PowerShell</option>
-          <option value="sql">SQL</option>
-          <option value="html">HTML</option>
-          <option value="css">CSS</option>
-          <option value="dart">Dart</option>
-          <option value="lua">Lua</option>
-          <option value="haskell">Haskell</option>
-          <option value="elixir">Elixir</option>
-        </select>
-      </div>
-
-      <button class="swap-btn" id="swapBtn" title="Swap languages">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m16 3 4 4-4 4"/><path d="M20 7H4"/><path d="m8 21-4-4 4-4"/><path d="M4 17h16"/></svg>
+  </div>
+  <div class="controls-bar">
+    <div class="lang-selector-wrap">
+      <span class="lang-label">From</span>
+      <select class="lang-select" id="sourceLang">
+        <option value="python">Python</option>
+        <option value="javascript">JavaScript</option>
+        <option value="typescript">TypeScript</option>
+        <option value="java">Java</option>
+        <option value="cpp">C++</option>
+        <option value="csharp">C#</option>
+        <option value="go">Go</option>
+        <option value="rust">Rust</option>
+        <option value="kotlin">Kotlin</option>
+        <option value="php">PHP</option>
+        <option value="ruby">Ruby</option>
+        <option value="bash">Bash</option>
+      </select>
+    </div>
+    <button class="swap-btn" id="swapBtn" title="Swap languages">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m16 3 4 4-4 4"/><path d="M20 7H4"/><path d="m8 21-4-4 4-4"/><path d="M4 17h16"/></svg>
+    </button>
+    <div class="lang-selector-wrap">
+      <span class="lang-label">To</span>
+      <select class="lang-select" id="targetLang">
+        <option value="javascript">JavaScript</option>
+        <option value="python">Python</option>
+        <option value="typescript">TypeScript</option>
+        <option value="java">Java</option>
+        <option value="cpp">C++</option>
+        <option value="csharp">C#</option>
+        <option value="go">Go</option>
+        <option value="rust">Rust</option>
+        <option value="kotlin">Kotlin</option>
+        <option value="php">PHP</option>
+        <option value="ruby">Ruby</option>
+        <option value="bash">Bash</option>
+      </select>
+    </div>
+    <div class="controls-right">
+      <button class="btn-sm btn-ghost" id="loadSampleBtn">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+        Load Sample
       </button>
-
-      <div class="lang-selector-wrap">
-        <span class="lang-label">To</span>
-        <select class="lang-select" id="targetLang">
-          <option value="javascript">JavaScript</option>
-          <option value="python">Python</option>
-          <option value="typescript">TypeScript</option>
-          <option value="java">Java</option>
-          <option value="c">C</option>
-          <option value="cpp">C++</option>
-          <option value="csharp">C#</option>
-          <option value="go">Go</option>
-          <option value="rust">Rust</option>
-          <option value="kotlin">Kotlin</option>
-          <option value="swift">Swift</option>
-          <option value="php">PHP</option>
-          <option value="ruby">Ruby</option>
-          <option value="scala">Scala</option>
-          <option value="r">R</option>
-          <option value="matlab">MATLAB</option>
-          <option value="bash">Bash</option>
-          <option value="powershell">PowerShell</option>
-          <option value="sql">SQL</option>
-          <option value="html">HTML</option>
-          <option value="css">CSS</option>
-          <option value="dart">Dart</option>
-          <option value="lua">Lua</option>
-          <option value="haskell">Haskell</option>
-          <option value="elixir">Elixir</option>
-        </select>
-      </div>
-
-      <div class="controls-right">
-        <button class="btn-sm btn-ghost" id="loadSampleBtn">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-          Load Sample
-        </button>
-        <button class="btn-sm btn-danger" id="clearBtn">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6M14 11v6"/></svg>
-          Clear
-        </button>
-      </div>
-    </div>
-
-    <!-- Editor grid -->
-    <div class="editor-grid">
-      <!-- SOURCE EDITOR -->
-      <div class="editor-card" id="sourceCard">
-        <div class="editor-topbar">
-          <div class="editor-topbar-left">
-            <div class="traffic-lights"><div class="tl tl-r"></div><div class="tl tl-y"></div><div class="tl tl-g"></div></div>
-            <div class="editor-lang-badge">
-              <span class="editor-lang-dot" id="sourceDot" style="background:#3572A5"></span>
-              <span id="sourceLangLabel">Python</span>
-            </div>
-          </div>
-          <div class="editor-topbar-right">
-            <button class="icon-btn" id="pasteSrcBtn" title="Paste from clipboard">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect width="8" height="4" x="8" y="2" rx="1" ry="1"/></svg>
-            </button>
-            <button class="icon-btn" id="copySrcBtn" title="Copy source">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
-            </button>
-          </div>
-        </div>
-        <div class="editor-body">
-          <div class="line-numbers" id="srcLineNums"><span>1</span></div>
-          <div class="code-area">
-            <!-- hl-layer sits behind the textarea -->
-            <div class="hl-layer" id="srcHlLayer"><pre><code id="srcHlCode"></code></pre></div>
-            <textarea class="code-textarea" id="sourceCode" spellcheck="false" autocorrect="off" autocapitalize="off" placeholder="// Paste your source code here...&#10;// Or click 'Load Sample' to try an example."></textarea>
-          </div>
-        </div>
-        <div class="token-counter">
-          <span class="token-item">Lines: <span class="token-val" id="srcLines">0</span></span>
-          <span class="token-item">Chars: <span class="token-val" id="srcChars">0</span></span>
-        </div>
-      </div>
-
-      <!-- OUTPUT EDITOR -->
-      <div class="editor-card" id="outputCard">
-        <div class="editor-topbar">
-          <div class="editor-topbar-left">
-            <div class="traffic-lights"><div class="tl tl-r"></div><div class="tl tl-y"></div><div class="tl tl-g"></div></div>
-            <div class="editor-lang-badge">
-              <span class="editor-lang-dot" id="targetDot" style="background:#f1e05a"></span>
-              <span id="targetLangLabel">JavaScript</span>
-            </div>
-          </div>
-          <div class="editor-topbar-right">
-            <button class="icon-btn" id="copyOutBtn" title="Copy output">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
-            </button>
-          </div>
-        </div>
-        <div class="editor-body" style="position:relative">
-          <div class="output-overlay" id="outputOverlay">
-            <div class="output-overlay-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m16 3 4 4-4 4"/><path d="M20 7H4"/><path d="m8 21-4-4 4-4"/><path d="M4 17h16"/></svg>
-            </div>
-            <div class="output-overlay-text">
-              <strong>Output appears here</strong>
-              Write some code on the left and click Convert
-            </div>
-          </div>
-          <div class="line-numbers" id="outLineNums"><span>1</span></div>
-          <div class="code-area">
-            <div class="hl-layer" id="outHlLayer"><pre><code id="outHlCode"></code></pre></div>
-            <textarea class="code-textarea" id="outputCode" spellcheck="false" autocorrect="off" autocapitalize="off" readonly placeholder="// Converted code will appear here..."></textarea>
-          </div>
-        </div>
-        <div class="token-counter">
-          <span class="token-item">Lines: <span class="token-val" id="outLines">0</span></span>
-          <span class="token-item">Chars: <span class="token-val" id="outChars">0</span></span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Error card -->
-    <div class="error-card" id="errorCard">
-      <span class="error-icon">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-      </span>
-      <p class="error-text" id="errorText"></p>
-    </div>
-
-    <!-- Action bar -->
-    <div class="convert-bar">
-      <button class="btn-convert" id="convertBtn">
-        <svg id="convertIcon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m16 3 4 4-4 4"/><path d="M20 7H4"/><path d="m8 21-4-4 4-4"/><path d="M4 17h16"/></svg>
-        <svg id="convertSpinner" class="spinner" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="display:none"><path d="M21 12a9 9 0 1 1-6.219-8.56"/></svg>
-        <span id="convertLabel">Convert</span>
-      </button>
-      <button class="btn-copy" id="copyResultBtn" disabled>
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
-        Copy Result
-      </button>
-      <button class="btn-download" id="downloadBtn" disabled>
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
-        Download
-      </button>
-    </div>
-
-    <!-- Notes card -->
-    <div class="notes-card" id="notesCard">
-      <div class="notes-header">
-        <div class="notes-icon">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
-        </div>
-        <div>
-          <div class="notes-title">Conversion Notes</div>
-          <div class="notes-sub">Things to keep in mind about this conversion</div>
-        </div>
-      </div>
-      <div class="notes-content" id="notesContent"></div>
-    </div>
-  </section>
-
-  <!-- FEATURES -->
-  <section class="features-section" id="features">
-    <div class="section-eyebrow">Why ANIX_Code Converter</div>
-    <div class="section-heading">Everything you need to <span class="text-grad">convert smarter</span></div>
-    <div class="features-grid">
-      <div class="feature-card">
-        <div class="feature-icon" style="background:rgba(139,92,246,0.12);color:var(--accent-a)">🧠</div>
-        <div class="feature-title">Claude AI Engine</div>
-        <div class="feature-desc">Powered by Anthropic's Claude — understands context, idioms, and best practices for each target language, not just syntax mapping.</div>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon" style="background:rgba(236,72,153,0.12);color:var(--accent-b)">⚡</div>
-        <div class="feature-title">Instant Results</div>
-        <div class="feature-desc">Conversions typically complete in under 3 seconds. No waiting, no queues — just fast, accurate output.</div>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon" style="background:rgba(6,182,212,0.12);color:var(--accent-c)">🌐</div>
-        <div class="feature-title">25+ Languages</div>
-        <div class="feature-desc">From Python to Rust, JavaScript to Haskell — covering all major languages and many niche ones too.</div>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon" style="background:rgba(16,185,129,0.12);color:var(--success)">✨</div>
-        <div class="feature-title">Syntax Highlighting</div>
-        <div class="feature-desc">Full real-time syntax highlighting on both input and output panels via Highlight.js — 185+ languages, adapts to dark/light mode.</div>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon" style="background:rgba(245,158,11,0.12);color:var(--warning)">📖</div>
-        <div class="feature-title">History Log</div>
-        <div class="feature-desc">Every conversion is stored locally so you can revisit, compare, and reload previous work without re-typing.</div>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon" style="background:rgba(139,92,246,0.12);color:var(--accent-a)">🎨</div>
-        <div class="feature-title">Dark & Light Mode</div>
-        <div class="feature-desc">A professional, distraction-free editor experience in both themes — your eyes will thank you during late-night sessions.</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- HISTORY -->
-  <section class="history-section" id="history">
-    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;flex-wrap:wrap;gap:12px">
-      <div>
-        <div class="section-eyebrow">Your Work</div>
-        <div class="section-heading" style="margin-bottom:0">Recent <span class="text-grad">Conversions</span></div>
-      </div>
-      <button class="btn-sm btn-danger" id="clearHistoryBtn">
+      <button class="btn-sm btn-danger" id="clearBtn">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/></svg>
-        Clear History
+        Clear
       </button>
     </div>
-    <div style="margin-bottom:20px"></div>
-    <div class="history-grid" id="historyGrid">
-      <div class="history-empty">No conversions yet. Make your first conversion above!</div>
-    </div>
-  </section>
+  </div>
 
-  <!-- FOOTER -->
-  <footer>
-    <div class="footer-inner">
-      <span class="footer-logo">ANIX_Code Converter</span>
-      <div class="footer-links">
-        <a class="footer-link" href="#converter">Converter</a>
-        <a class="footer-link" href="#features">Features</a>
-        <a class="footer-link" href="#history">History</a>
-      </div>
-      <span class="footer-copy">Powered by Claude AI &mdash; &copy; 2025</span>
-    </div>
-  </footer>
-
-  <div class="toast-container" id="toastContainer"></div>
-
-  <!-- SETTINGS MODAL -->
-  <div class="modal-backdrop" id="settingsModal">
-    <div class="modal">
-      <div class="modal-header">
-        <div class="modal-title">Settings</div>
-        <button class="modal-close" id="closeSettings">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-        </button>
-      </div>
-      <div class="modal-section">
-        <div class="modal-section-label">Theme</div>
-        <div class="toggle-group">
-          <button class="toggle-opt active" id="themeDark" onclick="setTheme('dark')">Dark</button>
-          <button class="toggle-opt" id="themeLight" onclick="setTheme('light')">Light</button>
-          <button class="toggle-opt" id="themeSystem" onclick="setTheme('system')">System</button>
-        </div>
-      </div>
-      <div class="modal-section">
-        <div class="modal-section-label">Editor</div>
-        <div class="settings-row">
-          <span class="settings-row-label">Font size</span>
-          <div class="range-row">
-            <input type="range" class="range-input" id="fontSizeRange" min="10" max="20" value="13" />
-            <span class="range-val" id="fontSizeVal">13</span>
+  <div class="editor-grid">
+    <!-- SOURCE -->
+    <div class="editor-card" id="sourceCard">
+      <div class="editor-topbar">
+        <div class="editor-topbar-left">
+          <div class="traffic-lights"><div class="tl tl-r"></div><div class="tl tl-y"></div><div class="tl tl-g"></div></div>
+          <div class="editor-lang-badge">
+            <span class="editor-lang-dot" id="sourceDot" style="background:#3572A5"></span>
+            <span id="sourceLangLabel">Python</span>
           </div>
         </div>
-        <div class="settings-row">
-          <span class="settings-row-label">Tab size</span>
-          <select class="settings-select" id="tabSizeSelect">
-            <option value="2">2 spaces</option>
-            <option value="4">4 spaces</option>
-            <option value="8">8 spaces</option>
-          </select>
-        </div>
-        <div class="settings-row">
-          <span class="settings-row-label">Show conversion notes</span>
-          <div class="toggle-group" style="width:120px">
-            <button class="toggle-opt active" id="notesOn" onclick="setNotesVisible(true)">On</button>
-            <button class="toggle-opt" id="notesOff" onclick="setNotesVisible(false)">Off</button>
-          </div>
+        <div class="editor-topbar-right">
+          <button class="icon-btn" id="pasteSrcBtn" title="Paste from clipboard">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect width="8" height="4" x="8" y="2" rx="1" ry="1"/></svg>
+          </button>
+          <button class="icon-btn" id="copySrcBtn" title="Copy source">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+          </button>
         </div>
       </div>
-      <div class="modal-footer">
-        <button class="btn-outline" onclick="closeSettings()">Close</button>
-        <button class="btn-primary" onclick="closeSettings()">Save</button>
+      <div class="editor-body">
+        <div class="line-numbers" id="srcLineNums"><span>1</span></div>
+        <div class="code-area">
+          <div class="hl-layer" id="srcHlLayer"><pre><code id="srcHlCode"></code></pre></div>
+          <textarea class="code-textarea" id="sourceCode" spellcheck="false" autocorrect="off" autocapitalize="off" placeholder="// Paste your source code here...&#10;// Or click 'Load Sample' to try an example."></textarea>
+        </div>
+      </div>
+      <div class="token-counter">
+        <span class="token-item">Lines: <span class="token-val" id="srcLines">0</span></span>
+        <span class="token-item">Chars: <span class="token-val" id="srcChars">0</span></span>
+      </div>
+    </div>
+
+    <!-- OUTPUT -->
+    <div class="editor-card" id="outputCard">
+      <div class="editor-topbar">
+        <div class="editor-topbar-left">
+          <div class="traffic-lights"><div class="tl tl-r"></div><div class="tl tl-y"></div><div class="tl tl-g"></div></div>
+          <div class="editor-lang-badge">
+            <span class="editor-lang-dot" id="targetDot" style="background:#f1e05a"></span>
+            <span id="targetLangLabel">JavaScript</span>
+          </div>
+        </div>
+        <div class="editor-topbar-right">
+          <button class="icon-btn" id="copyOutBtn" title="Copy output">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+          </button>
+        </div>
+      </div>
+      <div class="editor-body" style="position:relative">
+        <div class="output-overlay" id="outputOverlay">
+          <div class="output-overlay-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m16 3 4 4-4 4"/><path d="M20 7H4"/><path d="m8 21-4-4 4-4"/><path d="M4 17h16"/></svg>
+          </div>
+          <div class="output-overlay-text">
+            <strong>Output appears here</strong>
+            Write some code on the left and click Convert
+          </div>
+        </div>
+        <div class="line-numbers" id="outLineNums"><span>1</span></div>
+        <div class="code-area">
+          <div class="hl-layer" id="outHlLayer"><pre><code id="outHlCode"></code></pre></div>
+          <textarea class="code-textarea" id="outputCode" spellcheck="false" autocorrect="off" autocapitalize="off" readonly placeholder="// Converted code will appear here..."></textarea>
+        </div>
+      </div>
+      <div class="token-counter">
+        <span class="token-item">Lines: <span class="token-val" id="outLines">0</span></span>
+        <span class="token-item">Chars: <span class="token-val" id="outChars">0</span></span>
       </div>
     </div>
   </div>
-  <script src="converter.js"></script>
+
+  <div class="error-card" id="errorCard">
+    <span class="error-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></span>
+    <p class="error-text" id="errorText"></p>
+  </div>
+
+  <div class="convert-bar">
+    <button class="btn-convert" id="convertBtn">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m16 3 4 4-4 4"/><path d="M20 7H4"/><path d="m8 21-4-4 4-4"/><path d="M4 17h16"/></svg>
+      Convert
+    </button>
+    <button class="btn-copy" id="copyResultBtn" disabled>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+      Copy Result
+    </button>
+    <button class="btn-download" id="downloadBtn" disabled>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
+      Download
+    </button>
+  </div>
+
+  <div class="notes-card" id="notesCard">
+    <div class="notes-header">
+      <div class="notes-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg></div>
+      <div><div class="notes-title">Conversion Notes</div><div class="notes-sub">Key differences and manual review points</div></div>
+    </div>
+    <div class="notes-content" id="notesContent"></div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="features-section" id="features">
+  <div class="section-eyebrow">Why Code_X_Change</div>
+  <div class="section-heading">Everything you need to <span class="text-grad">convert smarter</span></div>
+  <div class="features-grid">
+    <div class="feature-card"><div class="feature-icon" style="background:rgba(139,92,246,.12);color:var(--accent-a)">⚙️</div><div class="feature-title">Rule-Based Engine</div><div class="feature-desc">No AI, no API calls, no network needed. Pure JavaScript regex and structural rules handle the conversion instantly.</div></div>
+    <div class="feature-card"><div class="feature-icon" style="background:rgba(236,72,153,.12);color:var(--accent-b)">⚡</div><div class="feature-title">Instant Results</div><div class="feature-desc">Conversions complete in under 10ms. No waiting, no latency — just immediate, local transformation.</div></div>
+    <div class="feature-card"><div class="feature-icon" style="background:rgba(6,182,212,.12);color:var(--accent-c)">🔒</div><div class="feature-title">100% Private</div><div class="feature-desc">Your code never leaves your browser. No data is sent anywhere — complete privacy guaranteed.</div></div>
+    <div class="feature-card"><div class="feature-icon" style="background:rgba(16,185,129,.12);color:var(--success)">✨</div><div class="feature-title">Syntax Highlighting</div><div class="feature-desc">Full real-time syntax highlighting on both panels via Highlight.js. Adapts to dark/light mode.</div></div>
+    <div class="feature-card"><div class="feature-icon" style="background:rgba(245,158,11,.12);color:var(--warning)">📖</div><div class="feature-title">Conversion Notes</div><div class="feature-desc">Each conversion includes specific notes about what changed, potential gotchas, and manual review points.</div></div>
+    <div class="feature-card"><div class="feature-icon" style="background:rgba(139,92,246,.12);color:var(--accent-a)">🎨</div><div class="feature-title">Dark & Light Mode</div><div class="feature-desc">Professional, distraction-free editing in both themes. Your eyes will thank you.</div></div>
+  </div>
+</section>
+
+<!-- SUPPORTED PAIRS -->
+<section class="support-section" id="support">
+  <div class="section-eyebrow">Coverage</div>
+  <div class="section-heading">Supported <span class="text-grad">Language Pairs</span></div>
+  <div class="support-grid" id="supportGrid"></div>
+</section>
+
+<!-- HISTORY -->
+<section class="history-section" id="history">
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;flex-wrap:wrap;gap:12px">
+    <div><div class="section-eyebrow">Your Work</div><div class="section-heading" style="margin-bottom:0">Recent <span class="text-grad">Conversions</span></div></div>
+    <button class="btn-sm btn-danger" id="clearHistoryBtn">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/></svg>
+      Clear History
+    </button>
+  </div>
+  <div style="margin-bottom:20px"></div>
+  <div class="history-grid" id="historyGrid"><div class="history-empty">No conversions yet. Make your first conversion above!</div></div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <span class="footer-logo">Codex Converter</span>
+    <div class="footer-links">
+      <a class="footer-link" href="#converter">Converter</a>
+      <a class="footer-link" href="#features">Features</a>
+      <a class="footer-link" href="#history">History</a>
+    </div>
+    <span class="footer-copy">Developer: Md. Anisur Rahman</span>
+  </div>
+</footer>
+
+<div class="toast-container" id="toastContainer"></div>
+
+<!-- SETTINGS MODAL -->
+<div class="modal-backdrop" id="settingsModal">
+  <div class="modal">
+    <div class="modal-header">
+      <div class="modal-title">Settings</div>
+      <button class="modal-close" id="closeSettings"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    </div>
+    <div class="modal-section">
+      <div class="modal-section-label">Theme</div>
+      <div class="toggle-group">
+        <button class="toggle-opt active" id="themeDark" onclick="setTheme('dark')">Dark</button>
+        <button class="toggle-opt" id="themeLight" onclick="setTheme('light')">Light</button>
+        <button class="toggle-opt" id="themeSystem" onclick="setTheme('system')">System</button>
+      </div>
+    </div>
+    <div class="modal-section">
+      <div class="modal-section-label">Editor</div>
+      <div class="settings-row">
+        <span class="settings-row-label">Font size</span>
+        <div class="range-row">
+          <input type="range" class="range-input" id="fontSizeRange" min="10" max="20" value="13" />
+          <span class="range-val" id="fontSizeVal">13</span>
+        </div>
+      </div>
+      <div class="settings-row">
+        <span class="settings-row-label">Tab size</span>
+        <select class="settings-select" id="tabSizeSelect">
+          <option value="2">2 spaces</option>
+          <option value="4">4 spaces</option>
+        </select>
+      </div>
+      <div class="settings-row">
+        <span class="settings-row-label">Show conversion notes</span>
+        <div class="toggle-group" style="width:120px">
+          <button class="toggle-opt active" id="notesOn" onclick="setNotesVisible(true)">On</button>
+          <button class="toggle-opt" id="notesOff" onclick="setNotesVisible(false)">Off</button>
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn-outline" onclick="closeSettings()">Close</button>
+      <button class="btn-primary" onclick="closeSettings()">Save</button>
+    </div>
+  </div>
+</div>
+<script src="script.js"></script>
 </body>
 </html>
