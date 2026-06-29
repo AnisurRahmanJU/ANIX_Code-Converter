@@ -314,4 +314,4 @@
     .text-grad{background:var(--accent-grd);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
     @keyframes slide-up{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
     .slide-up{animation:slide-up .4s cubic-bezier(.4,0,.2,1) forwards}
- 
+  
