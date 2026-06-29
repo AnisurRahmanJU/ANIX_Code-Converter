@@ -1865,6 +1865,12 @@ const CONVERTERS = {
 };
 
 const SUPPORT_PAIRS = [
+  {from:'C',to:'Java',quality:'high'},
+  {from:'C++',to:'Java',quality:'high'},
+  {from:'Python',to:'C',quality:'medium'},
+  {from:'Python',to:'C++',quality:'medium'},
+  {from:'C',to:'JavaScript',quality:'medium'},
+  {from:'C++',to:'JavaScript',quality:'medium'},
   {from:'Python',to:'JavaScript',quality:'high'},
   {from:'Python',to:'Java',quality:'medium'},
   {from:'Python',to:'Go',quality:'medium'},
